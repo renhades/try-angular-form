@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userInfoModule">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular 模組化練習</title>
+  <script type="text/javascript"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="scripts/ng-lib/angular.min.js"></script>
+  <script src="scripts/form.js"></script>
+</head>
+<body>
+  <div class="panel panel-primary">
+    <!-- 標題 -->
+    <div class="panel-heading">
+      <div class="panel-title">Two-way data binding</div>
+    </div>
+    <!-- 表單 -->
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-horizontal" role="form" ng-controller="userInfoCtrl">
+
+            <!-- 電子信箱 -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">電子信箱 / Email</label>
+              <div class="col-md-10">
+                <input type="email" class="form-control" placeholder="請輸入電子信箱" ng-model="userInfo.email">
+              </div>
+            </div>
+
+            <!-- 密碼 -->
+            <div class="form-group">
+              <label class="col-md-2 control-label">密碼 / Password</label>
+              <div class="col-md-10">
+                <input type="password" class="form-control" placeholder="請輸入字母、數字" ng-model="userInfo.password">
+              </div>
+            </div>
+
+            <!-- 自動登錄 -->
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <label>
+                  <input type="checkbox" ng-model="userInfo.autoLogin"> 自動登錄 / AutoLogin
+                </label>
+              </div>
+            </div>
+
+            <!-- 觀察按鈕 -->
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-default" ng-click="getFormData()">獲得 Form 的值</button>
+                <button class="btn btn-default" ng-click="setFormData()">設定 Form 的值</button>
+                <button class="btn btn-default" ng-click="resetFormData()">重置 Form 的值</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
